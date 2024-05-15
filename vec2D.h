@@ -1,24 +1,29 @@
-
+#pragma once
+#include <iostream>
 
 class vec2D
 {
 protected:
-    float x;
-    float y;
+    double x;
+    double y;
 
 public:
 
-    void set_x(float);
-    void set_y(float);
+    vec2D();
+    vec2D(double, double);
+
+    void set_x(double);
+    void set_y(double);
     
-    float get_x()
+    double get_x() const
     { return x; };
     
-    float get_y()
+    double get_y() const
     { return y; };
 
-    vec2D operator+(const vec2D&);
-    vec2D operator-(const vec2D&);
+    vec2D operator+(const vec2D&) const;
+    vec2D operator-(const vec2D&) const;
     vec2D operator=(const vec2D&);
 
+    void toStr() const;
 };
