@@ -1,5 +1,6 @@
 #include "vec2D.cpp"
 #include "robot.cpp"
+#include "map_parser.cpp"
 
 
 int main(void)
@@ -10,6 +11,6 @@ int main(void)
     vec2D vec3 = (vec1 + vec2);
     vec3.toStr();
 
-
+    map_parser("map1.png");
     return 0;
 }
