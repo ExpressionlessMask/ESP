@@ -1,13 +1,12 @@
-#include "vec2D.h"
 
 class robot 
 {
 private:
-    vec2D velocity;
-    vec2D acceleration;
+    double lVel;
+    double omega;
 
 public:
-    void upd_acc(vec2D);
+    void upd_acc();
     void upd_vel();
 
     //void getScan();
