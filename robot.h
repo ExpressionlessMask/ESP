@@ -25,3 +25,16 @@ public:
 };
 
 //static const double TIMESTEP = 0.001;
+
+/*
+COMMON 
+x = complete state 
+x_t = state at time t
+robot pose: (x-coord, y-coord, yaw)
+z_t1-t2: set of all measurements acquired from time t1 to time t2
+u_t = control data ( change of world state in the time interval (t-1, t] )
+u_t1-t2 = u_t1, u_(t1+1), u_(t1+2), ..., u_t2
+
+
+
+*/
