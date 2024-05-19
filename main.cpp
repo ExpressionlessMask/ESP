@@ -1,17 +1,30 @@
 #include "robot.h"
 #include "map_parser.cpp"
+#include <random>
+
+int LANDMARK_NUMBER = 5;
+int MAP_SIZE = 50;
 
 
+void genLandmark(int, double []);
 
 int main(void)
 {
+    double landmarks[marks_num][2]; //[ [x,y], [x,y], ...]
+    genLandmark(LANDMARK_NUMBER);
+    
     robot R(10, 10, 0);
     R.publishPose();
 
     return 0;
 }
 
-
+void genLandmark(int number, landmarks) { ///Check args
+    std::default_random_engine generator;
+    std::uniform_int_distribution<int> distribution(-10, 10);
+    
+    
+}
 
 //Robot class from here out
 robot::robot(double pos_x, double pos_y, double theta) { //eh?
