@@ -1,3 +1,5 @@
+#include <random>
+
 #include "robot.h"
 #include "map_parser.cpp"
 #include <random>
@@ -15,6 +17,8 @@ int main(void)
     
     robot R(10, 10, 0);
     R.publishPose();
+
+    map_parser("map2_.pbm");
 
     return 0;
 }
