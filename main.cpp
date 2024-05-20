@@ -3,9 +3,7 @@
 #include "robot.h"
 #include "map_parser.cpp"
 
-int LANDMARK_NUMBER = 5;
 int MAP_SIZE = 50;
-
 
 void genLandmark(double [][2]);
 void demonstrate(double [][2]);
@@ -50,6 +48,13 @@ robot::robot(double pos_x, double pos_y, double theta) { //eh?
     this->state[1] = pos_y;
     this->state[2] = theta;
 };
+
+void robot::scan(int points, double landmarks[][2]) {
+    for (int i = 0; i < points; i++) {
+        distances[i] = sqrt( pow( (landmarks[i][0] - state[0]), 2) + 
+                                        pow( (landmarks[i][1] - state[1]), 2));
+    }
+}
 
 
 void robot::changeState(int i, double val) {

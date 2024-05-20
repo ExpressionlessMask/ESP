@@ -1,3 +1,5 @@
+#include <math.h>
+const int LANDMARK_NUMBER = 5;
 
 class robot 
 {
@@ -5,7 +7,7 @@ private:
     double linear = 0.0;
     double omega = 0.0;
     double state[3];
-    static const int TIMESTEP = 1000;
+    double distances[LANDMARK_NUMBER];
 
 public:
     robot(double, double, double);
@@ -16,6 +18,8 @@ public:
     void setOmega(double omega)
     { this->omega = omega; }
 
+    void scan(int, double [][2]);
+
     void changeState(int, double);
 
     void updatePose(double, double, double);
@@ -24,7 +28,6 @@ public:
 
 };
 
-//static const double TIMESTEP = 0.001;
 
 /*
 COMMON 
