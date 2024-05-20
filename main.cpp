@@ -7,6 +7,7 @@ int MAP_SIZE = 50;
 
 void genLandmark(double [][2]);
 void demonstrate(double [][2]);
+void demonstrate(double []);
 
 int main(void)
 {
@@ -14,9 +15,16 @@ int main(void)
     genLandmark(landmarks);
     demonstrate(landmarks);
 
+    cout << "\n--------------------------\n";
     
-    //robot R(10, 10, 0);
-    //R.publishPose();
+    robot R(10, 10, 0);
+    R.publishPose();
+
+    cout << "\n--------------------------\n";
+
+    R.scan(LANDMARK_NUMBER, landmarks);
+    demonstrate(R.getDistances());
+
 
     //map_parser("map2_.pbm");
 
@@ -40,6 +48,12 @@ void demonstrate(double array [][2]) {
         std::cout << i << ": (" << array[i][0] << ", " << array[i][1] << ")" << endl;
     }
 
+}
+void demonstrate(double array []) {
+    for (int i = 0; i < LANDMARK_NUMBER; i++) {
+        std::cout << i << ": (" << array[i] << ")" << endl;
+
+    }
 }
 
 //Robot class from here out

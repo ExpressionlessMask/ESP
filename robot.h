@@ -9,8 +9,13 @@ private:
     double state[3];
     double distances[LANDMARK_NUMBER];
 
+   
+
 public:
     robot(double, double, double);
+
+    double* getDistances()
+    { return this->distances; }
 
     void setLinear(double linear)
     { this->linear = linear; }
