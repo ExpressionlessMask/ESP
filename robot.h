@@ -8,6 +8,7 @@ private:
     double omega = 0.0;
     double state[3];
     double distances[LANDMARK_NUMBER];
+    double noisy_distances[LANDMARK_NUMBER];
 
    
 
@@ -28,14 +29,14 @@ public:
     void changeState(int, double);
 
     void updatePose(double, double, double);
-    //void getScan();
+
     void publishPose();
 
 };
 
 
 /*
-COMMON 
+COMMON VARIABLES
 x = complete state 
 x_t = state at time t
 robot pose: (x-coord, y-coord, yaw)
