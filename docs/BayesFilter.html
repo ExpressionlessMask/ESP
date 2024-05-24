@@ -1,18 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
+
 <head>
 <link rel="stylesheet" href="style.css">
+<title>MCL in practice</title>
 </head>
+
 <body>
 
 <h1>Bayes Filter</h1>
-<p>"There are only two certainties in life: death and taxes" - Sandi Mak <br><br>
-  
+<p>
+The foundation of all probabilistic robotics algorithms is the Bayes algorithm, which itself is based on the Bayes Rule. Bayes rule allows to inverse conditional probabilities using already known data as well as switch between conditional and simultaneous
+(intersection) probabilities.
 </p>
+<img id="imag" src="sources/Bayes.png" width="370" height="125" >
+<p>
+This property is extensively used in the Bayes Filter, as well as all of its derivatives. By itself BF is not practical: since 
+it needs to integrate on every cycle, the state space must be finite so that the integral becomes a finite sum, which is not the case
+for most potential applications.
+</p>
+<img id="imag" src="sources/Bayes.jpg" width="500" height="170" >
 
 
 
-<div> 
+
+<div id="navigation"> 
 <a href="index.html">Introduction</a> ->
 Bayes Filter ->
 <a href="KalmanFilter.html">Kalman Filter</a> ->

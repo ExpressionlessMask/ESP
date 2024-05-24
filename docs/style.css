@@ -1,13 +1,30 @@
 
 p { font-family: "Linux Libertine G", Garamond;
-	font-size: 16px;
+	font-size: 18px;
+	<!margin-left: 10px;>
 	<!background-color: >
 
 }
 
-#q1{ font-family: "Linux Libertine G", Garamond;
+#q1{ font-family: "Old English Text MT", Garamond;
 	 font-size: 30px;
-	 font-style: italic;
+	 font-style: normal;
 	
 	
+}
+
+h1{ font-weight: bold;
+	font-size: 40px;
+
+}
+
+#navigation {
+	font-family: ;
+	font-size: 16px;
+	
+}
+
+#imag { border:2px solid  black;
+
+
 }

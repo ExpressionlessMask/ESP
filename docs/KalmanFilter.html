@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
   <link rel="stylesheet" href="style.css">
   <title>MCL in practice</title>
@@ -8,11 +8,18 @@
 <body>
 
 <h1>Kalman Filter</h1>
-<p>My first paragraph.</p>
+<p>The Kalman Filter is a direct descendant of the Bayes Filter. It is the first practical implementation of BF.
+It uses uni- and multivariate Gaussians of linear functions to describe the posterior belief of the robot, and does it in time
+polynomial to the measurement and state matrices dimensions. It still has a number of limitations. First, it only works on 
+unimodal Gaussian distributions. This implies that the robot can only have a single mean of potential state with an uncertainty 
+range. This type of algorithm can be used for localization with known map and initial position, but crumbles as soon as the robot 
+is missing either or the state transition probability and measurement probability are non-linear. 
+
+ </p>
+<img id="imag" src="sources/Kalman.jpg" width="555" height="253" >
 
 
-
-<div> 
+<div id="navigation"> 
 <a href="index.html">Introduction</a> ->
 <a href="BayesFilter.html">Bayes Filter</a> ->
 Kalman Filter ->

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
   <link rel="stylesheet" href="style.css">
   <title>MCL in practice</title>
@@ -8,11 +8,18 @@
 <body>
 
 <h1>Extended Kalman Filter</h1>
-<p>My first paragraph.</p>
+<p>In cases where the belief cannot be always expressed as a linear transformation of a Gaussian random variable, rendering the 
+posterior distribution impossible to calculate by normal means, a solution exists: those non-linear transformations are linearized 
+with a first-order Taylor expansion centered at the mean of the previous Gaussian. This allows for the final distribution to be of 
+a Gaussian shape again allowing the algorithm to work again. While this approach is much more efficient compared to the Monte Carlo
+method used to calculate the non-Gaussian posterior, it also introduces its own error to the final mean and variance. Just like KF
+it is unable to work with multimodal distributions.
+</p>
+<img id="imag" src="sources/EKalman2.jpg" width="550" height="220" > <br>
 
+<img id="imag" src="sources/EKalman.jpg" width="430" height="375" style="position:absolute; margin-top: -230px; margin-left:800px;>
 
-
-<div> 
+<div id="navigation"> 
 <a href="index.html">Introduction</a> ->
 <a href="BayesFilter.html">Bayes Filter</a> ->
 <a href="KalmanFilter.html">Kalman Filter</a> ->

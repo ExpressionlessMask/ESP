@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
   <link rel="stylesheet" href="style.css">
   <title>MCL in practice</title>
@@ -8,11 +8,46 @@
 <body>
 
 <h1>Monte Carlo Localization</h1>
-<p>My first paragraph.</p>
+<p>One of the most popular localization algortihms that is widely used in probabilistic robotics is the Monte Carlo Localization
+algorithm. It has one key difference that makes it both easy to impolement, computationally effective, and robust in both local
+and global localization. Instead one single Gaussian distribution, it uses thousands of particles to estimate its position.
+<br><br>
+MCL is a Particle Filter type algorithm, which means that the belief of the robot is modeled as a cloud of particles - possible
+states the robot may be in. The algorithm is as follows:<br></p>
+
+<img id="imag" src="sources/MCL.jpg" width="500" height="600" style="position:absolute; margin-top: 10px; margin-left: 1050px;">
+
+<div style="text-size: 20px; margin-left: 30px; width:40%">
+1) The robot models the initial belief as a uniform distribution across a known map.
+Every particle has equal weight.<br><br>
+2) The robot scans its surroundings. Based on the observations, some particles are given increased weight, some decreased.
+<br><br>
+3) The robot then resamples the belief with respect to the weight of the particles (one such algortihm is Rejection Sampling)
+and shits the new distribution based on its movement. The uniform distribution becomes more concentrated where the robot thinks 
+it is. The weight is reset. <br><br>
+4) The robot makes another observation, assigns weight, resamples and shifts. In a non-monotone environment it would reach a
+tight cluster of particles-states in a small amount of iterations.
+</div>
+<p> 
+This algorithm allows the robot to localize itself both globally, with the help of the map and unique features of the terrain,<br>
+and locally, where it counteracts the noise produced by measurements and odometry with observations.<br>
+Another strength of MCl is absolute independence from unimodal belief distribution and linear Gaussian transformations.<br>
+Its accuraccy can be traded off with computational time by increasing the number of particles. 
+<br><br>
+There is an issue that a default MCL cannot resolve: the Kidnapped Robot Problem. After successfully establishing it's position,
+the <br> robot is vulnerable to sudden displacements. Since all the particles are concentrated in a single wrong spot, it cannot properly
+<br> relocalize itself in that state. <br>
+Fortunately the solution is fairly simple. After every iteration, the algorithm just has to insert a few random points across the map.<br>
+It will allow the robot to constantly reevaluate seemingly impossible points, which only adds robustness to the localization algorithm <br> whether the robot was kidnapped or not.
+
+</p>
+<img id="imag" src="sources/MCL2.jpg" width="558" height="519" margin-top: 10px;>
 
 
 
-<div> 
+
+
+<div id="navigation" style="margin-top:20px;"> 
 <a href="index.html">Introduction</a> ->
 <a href="BayesFilter.html">Bayes Filter</a> ->
 <a href="KalmanFilter.html">Kalman Filter</a> ->
@@ -20,9 +55,7 @@
 Monte Carlo Localization 
 </div>
 
-<div style="direction: rtc;">
-<a href="index.html">Title Page</a>
-</div>
+
 
 </body>
 </html> 
