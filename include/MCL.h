@@ -7,10 +7,10 @@ struct particle
 {
     particle(Robot r, double w);
     Robot r;
-    double w;
+    double w;   //Weight of the particle in a belief distribution
 };
 
-struct command
+struct command  //usually represented by u, it holds forward and rotational velocities assigned to the robot
 {
     command(double f, double t);
     double forward;

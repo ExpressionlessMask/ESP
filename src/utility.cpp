@@ -6,6 +6,17 @@
 #include <math.h>
 #include <random>
 
+void utility::genLandmarks(double * landmarks) 
+{
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    // get rangom number from normal distribution
+    std::uniform_real_distribution<double> dist(0.0, 100.0);
+    for (int i = 0; i < 16; i++) {
+        landmarks[i] = dist(gen);
+    }
+}
+
 double utility::get_gaussian_random_number(double mean, double var)
 {
     // Random Generators
@@ -60,7 +71,7 @@ void utility::visualization(Robot *robot, int step, std::vector<particle> *belie
     //Draw cvplot scatter plot for the robot, landmarks, particles and resampled particles on a graph
     int n = belief->size();
     std::vector<std::pair<float, float>> data;
-/*
+
     //Graph Format
     auto name = "MCL";
     cvplot::setWindowTitle(name, "step" + std::to_string(step));
@@ -102,5 +113,5 @@ void utility::visualization(Robot *robot, int step, std::vector<particle> *belie
 
     //Show the plot
     cvplot::figure(name).show();
-*/
+
 }

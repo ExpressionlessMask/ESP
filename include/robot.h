@@ -15,7 +15,7 @@ public:
     Robot(World world);
     // Set robot's states
     void set_states(double new_x, double new_y, double new_orient);
-    // Set robots state transition noise
+    // Set robots state transition noise. Added manually since it's only a simulation of a real system
     void set_noise(double forward_noise, double turn_noise, double sensor_noise);
     // Sense the environment with sensors
     std::vector<double> sense(bool noise = true);

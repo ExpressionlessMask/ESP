@@ -2,6 +2,8 @@
 #define UTILITY_H
 
 #include <vector>
+#include "../cvplot/include/cvplot/cvplot.h"
+#include <opencv2/opencv.hpp>
 
 class World;
 struct particle;
@@ -9,6 +11,8 @@ class Robot;
 
 namespace utility
 {
+    // Create a number of randomly placed Landmarks in (x,y) pairs 
+    void genLandmarks(double *);
     // Get random number from normal distribution given its mean and variance
     double get_gaussian_random_number(double mean, double var);
     // get random number between [0,1.0]

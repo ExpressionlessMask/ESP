@@ -1,6 +1,5 @@
 #include "../include/robot.h"
 #include "../include/utility.h"
-#include <algorithm>
 
 double Robot::forward_noise__;
 double Robot::turn_noise__;
@@ -40,6 +39,7 @@ std::vector<double> Robot::sense(bool noise)
     {
         // get Euclidean distance to each landmark and add noise to simulate range finder data
         double m = sqrt(pow((lms[i - 1] - x__), 2) + pow((lms[i] - y__), 2));
+        // adds noise to a measurement if the noise is not 0
         noise ? m += utility::get_gaussian_random_number(0.0, sense_noise__) : m += 0.0;
         measurements.push_back(m);
     }
@@ -50,7 +50,7 @@ std::vector<double> Robot::sense(bool noise)
 void Robot::move(double turn, double forward)
 {
     // set rotation, add gaussian noise with mean of rotation bias and turn_noise as variance
-    // here we assume trn bias is zero
+    // here we assume turn bias is zero
     orientation__ = fmod((orientation__ + turn + utility::get_gaussian_random_number(0.0, turn_noise__)), (2 * M_PI));
 
     double dist = forward + utility::get_gaussian_random_number(0, forward_noise__);

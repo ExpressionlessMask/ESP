@@ -1,7 +1,6 @@
 #include "../include/MCL.h"
 #include "../include/utility.h"
 #include <assert.h>
-#include <algorithm>
 
 particle::particle(Robot rr, double ww) : r(rr), w(ww) {}
 

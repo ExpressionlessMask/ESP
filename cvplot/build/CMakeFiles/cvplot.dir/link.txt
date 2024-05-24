@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcvplot.a CMakeFiles/cvplot.dir/src/cvplot/color.cc.o CMakeFiles/cvplot.dir/src/cvplot/figure.cc.o CMakeFiles/cvplot.dir/src/cvplot/highgui.cc.o CMakeFiles/cvplot.dir/src/cvplot/window.cc.o
+/usr/bin/ranlib libcvplot.a
